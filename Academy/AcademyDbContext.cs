@@ -1,10 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Academy.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Academy
 {
     public class AcademyDbContext:DbContext
     {
-        public DbSet<>
+        public AcademyDbContext(DbContextOptions<AcademyDbContext> options) : base(options)
+        {
+
+        }
+
+        public DbSet<Student> Students { get; set; }
     }
 }
